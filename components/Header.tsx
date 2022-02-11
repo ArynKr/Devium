@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 function Header() {
   return (
-    <header className="mx-auto flex max-w-7xl justify-between">
+    <header className="mx-auto flex max-w-7xl justify-between py-5 px-10">
       <div className="flex items-center space-x-5">
         <Link href="/">
           <img
