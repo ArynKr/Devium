@@ -16,9 +16,6 @@ export default function Home({ posts }: Props) {
         <title>Medium 2.0</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* TODO: Move this into layout wrapper component */}
-      {/* Navbar */}
-      <Header />
       {/* Head Section */}
       <main className="border-y border-black bg-yellow-400">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-10 py-20">
@@ -44,9 +41,11 @@ export default function Home({ posts }: Props) {
 
       {/* Posts Section */}
       <section>
-        {posts.map((post) => (
-          <PostThumb post={post} />
-        ))}
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-10 py-10 sm:grid-cols-2 lg:grid-cols-3">
+          {posts.map((post) => (
+            <PostThumb key={post._id} post={post} />
+          ))}
+        </div>
       </section>
     </div>
   )
